@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(428, 926),
+      //designSize: Size(428, 926),
         builder: () => DevicePreview(
             enabled: true,
             builder: (context) => MaterialApp(

@@ -41,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Center(
                     child: Container(
                       margin: EdgeInsets.only(top: 0.02.sh),
-                      width: 0.30.sw,
-                      height: 0.09.sh,
+                      width: 0.35.sw,
+                      height: 0.08.sh,
                       child: Image.asset('assets/Drivinglogo.png'),
                     ),
                   ),
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20.r)),
-                      margin: EdgeInsets.only(top: 0.05.sh),
+                      margin: EdgeInsets.only(top: 0.09.sh),
                       width:0.80.sw,
                      //height: 0.55.sh,
                       child: Padding(
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                      Spacer(),
                                      Container(
                                        decoration: BoxDecoration(
-                                         image: DecorationImage( image: AssetImage('assets/sss.png'),fit: BoxFit.fill),
+                                         image: DecorationImage( image: AssetImage('assets/hazard.png'),fit: BoxFit.fill),
                                          borderRadius: BorderRadius.circular(20.r),
                                          color: Colors.white,
                                          // boxShadow: [
@@ -140,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
-                                          image: DecorationImage( image: AssetImage('assets/sss.png'),fit: BoxFit.fill),
+                                          image: DecorationImage( image: AssetImage('assets/signs.png'),fit: BoxFit.fill),
                                           borderRadius: BorderRadius.circular(20.r),
                                           color: Colors.white,
                                           // boxShadow: [
@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(20.r),
                                           color: Colors.white,
-                                          image: DecorationImage( image: AssetImage('assets/signs.png'),fit: BoxFit.fill),
+                                          image: DecorationImage( image: AssetImage('assets/highway.png'),fit: BoxFit.fill),
 
                                           // boxShadow: [
                                           //   BoxShadow(

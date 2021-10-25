@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'Screens/hazard_preception.dart';
 import 'Screens/home.dart';
+import 'Screens/mock_test.dart';
 import 'Screens/theory_test.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
               // home: Splash(),
               routes: {
-                '/': (BuildContext context) => HazardPreception(),
+                '/': (BuildContext context) => MockTest(),
 
               },
             )));

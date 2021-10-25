@@ -1,5 +1,7 @@
 import 'package:driving_theory/CustomWidgets/bottomNavBar.dart';
 import 'package:driving_theory/CustomWidgets/hazard_box.dart';
+import 'package:driving_theory/CustomWidgets/highwayTile.dart';
+import 'package:driving_theory/CustomWidgets/mock_test_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +15,9 @@ class MockTest extends StatefulWidget {
 
 class _MockTestState extends State<MockTest> {
   DecorationImage _buildServiceBoxImage(String image) {
+    return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
+  }
+  DecorationImage _buildMinutesBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
   }
 
@@ -40,7 +45,7 @@ class _MockTestState extends State<MockTest> {
                     ),
                   ), //////////////////////Top Center Container for logo or heading as tittle
                   Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: Container(
                         decoration: BoxDecoration(
                             boxShadow: [
@@ -57,95 +62,75 @@ class _MockTestState extends State<MockTest> {
                         width: 0.90.sw,
                         //height: 0.55.sh,
                         child: Padding(
-                          padding: EdgeInsets.only(top: 0.12.sh),
+                          padding: EdgeInsets.only(top: 0.13.sh),
                           child: Column(
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.all(28.0),
+                              Expanded(
+                                flex: 3,
+                                child: Container(
+
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
-                                          color: Colors.green,
+                                          image: _buildMinutesBoxImage('assets/timer.png'),
                                           borderRadius:
-                                          BorderRadius.circular(
-                                              20.r)),
-                                      width: 0.20.sw,
-                                      height: 0.20.sh,
+                                              BorderRadius.circular(20.r)),
+                                      width: 0.25.sw,
+                                      height: 0.25.sh,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          SizedBox(height: 0.02.sh,),
+
+                                          Text('57',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),),
+                                          Text('MINUTES')
+                                        ],
+                                      ),
                                     ),
                                     Container(
                                       decoration: BoxDecoration(
-                                          color: Colors.yellow,
+                                          image: _buildMinutesBoxImage('assets/qusetionBox.png'),
                                           borderRadius:
-                                          BorderRadius.circular(
-                                              20.r)),
-                                      width: 0.20.sw,
-                                      height: 0.20.sh,
+                                              BorderRadius.circular(20.r)),
+                                      width: 0.25.sw,
+                                      height: 0.25.sh,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              SizedBox(height: 0.02.sh,),
+
+                                              Text('50',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),),
+                                              Text('QUESTIONS')
+                                            ],
+                                          )
+
                                     ),
                                     Container(
                                       decoration: BoxDecoration(
-                                          color: Colors.blue,
+                                        image:_buildMinutesBoxImage('assets/likeBox.png'),
                                           borderRadius:
-                                          BorderRadius.circular(
-                                              20.r)),
-                                      width: 0.20.sw,
-                                      height: 0.20.sh,
+                                              BorderRadius.circular(20.r)),
+                                      width: 0.25.sw,
+                                      height: 0.25.sh,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          SizedBox(height: 0.02.sh,),
+
+                                          Text('43',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),),
+                                          Text('TO PASS')
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
+                                  ),
                               ),
-                              // Expanded(
-                              //     flex: 3,
-                              //     child: Container(
-                              //       color: Colors.red,
-                              //       child: Padding(
-                              //         padding: EdgeInsets.only(top: 18.0.w,bottom: 18.0.w,left: 10.w,right: 10.w),
-                              //         child: Row(
-                              //           mainAxisAlignment:
-                              //               MainAxisAlignment.spaceBetween,
-                              //           children: [
-                              //             Container(
-                              //               decoration: BoxDecoration(
-                              //                   color: Colors.green,
-                              //                   borderRadius:
-                              //                       BorderRadius.circular(
-                              //                           20.r)),
-                              //               width: 0.15.sh,
-                              //             ),
-                              //             SizedBox(width: 10,),
-                              //             Container(
-                              //               decoration: BoxDecoration(
-                              //                   color: Colors.blue,
-                              //                   borderRadius:
-                              //                   BorderRadius.circular(
-                              //                       20.r)),
-                              //               width: 0.15.sh,
-                              //             ),
-                              //             SizedBox(width: 10,),
-                              //
-                              //             Container(
-                              //               decoration: BoxDecoration(
-                              //                   color: Colors.orange,
-                              //                   borderRadius:
-                              //                   BorderRadius.circular(
-                              //                       20.r)),
-                              //               width: 0.15.sh,
-                              //             ),
-                              //           ],
-                              //         ),
-                              //       ),
-                              //     )),
-                              // Expanded(
-                              //     flex: 1,
-                              //     child: Container(
-                              //       color: Colors.yellow,
-                              //     )),
-                              // Expanded(
-                              //     flex: 2,
-                              //     child: Container(
-                              //       color: Colors.black,
-                              //     ))
+                              Spacer(),
+                              MockTestTitle()
                             ],
                           ),
                         )),
@@ -198,7 +183,19 @@ class _MockTestState extends State<MockTest> {
                     size: 35,
                   ),
                 ),
-              ))
+              )),
+              Positioned(child: Align(
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary:
+                    Color(0xFF404FFA) // This is what you need!
+                    ),
+
+
+                  child:Text('      Start       ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.sp),),onPressed: (){},
+                ),
+              )),
+
             ]),
           ),
           // This trailing comma makes auto-formatting nicer for build methods.

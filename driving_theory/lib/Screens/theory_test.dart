@@ -21,6 +21,7 @@ class _TheoryTestState extends State<TheoryTest> {
       color: Colors.blue[200],
       child: SafeArea(
         child: Scaffold(
+
           bottomNavigationBar: BottomNavBar(),
           body: Container(
             decoration: BoxDecoration(
@@ -60,13 +61,13 @@ class _TheoryTestState extends State<TheoryTest> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
-                              flex: 4,
+                              flex: 3,
                               child: Container(
 
                               ),
                             ),
                             Expanded(
-                              flex: 4,
+                              flex: 3,
                               child: Container(
                                 width: 0.60.sw,
                                 decoration: BoxDecoration(
@@ -80,21 +81,24 @@ class _TheoryTestState extends State<TheoryTest> {
                                       )
                                     ],
                                     borderRadius: BorderRadius.circular(20.r)),
-                                  child:Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                  child:Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Row(
+                                     // mainAxisAlignment: MainAxisAlignment.center,
 
-                                    children: [
-                                      Image.asset('assets/question.png',height: 75.h,width: 75.w,),
-                                      SizedBox(width: 20.w,),
-                                      Text('PRACTICE ALL\n Questions',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
-                                    ],
+                                      children: [
+                                        Image.asset('assets/question.png',height: 75.h,width: 75.w,),
+                                        SizedBox(width: 18.w,),
+                                        Text('PRACTICE ALL\n Questions',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                                      ],
+                                    ),
                                   ) ,
                               ),
                             ),
                             SizedBox(height: 0.03.sh,),
 
                             Expanded(
-                              flex: 4,
+                              flex: 3,
                               child: Container(
                                   width: 0.60.sw,
                                 decoration: BoxDecoration(
@@ -112,10 +116,10 @@ class _TheoryTestState extends State<TheoryTest> {
                                 child:Padding(
                                   padding: const EdgeInsets.all(10.0),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                   // mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Image.asset('assets/stopwatch.png',height: 75.h,width: 75.h,),
-                                      SizedBox(width: 20.w,),
+                                      SizedBox(width: 25.w,),
                                       Text('MOCK TEST',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                     ],
                                   ),
@@ -173,7 +177,7 @@ class _TheoryTestState extends State<TheoryTest> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text('Theory Test',style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.bold,color: Colors.black45),),
+                                child: Text('Theory Test',style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.bold,color:Color(0xFF414253)),),
                               )
                             ],
                           ),
@@ -183,6 +187,14 @@ class _TheoryTestState extends State<TheoryTest> {
                   ),
                 ),
               ),
+              Positioned(
+
+                  child: Padding(
+                    padding:  EdgeInsets.only(top: 0.02.sh,left: 0.02.sw),
+                    child: InkWell(onTap: (){},
+                child:Icon(Icons.arrow_back_ios_outlined,color: Colors.blue[800],size: 35,)
+                ,),
+                  ))
             ]),
           ),
           // This trailing comma makes auto-formatting nicer for build methods.

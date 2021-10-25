@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'Screens/hazard_preception.dart';
 import 'Screens/home.dart';
 import 'Screens/theory_test.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
               // home: Splash(),
               routes: {
-                '/': (BuildContext context) => TheoryTest(),
+                '/': (BuildContext context) => HazardPreception(),
 
               },
             )));

@@ -89,10 +89,15 @@ class _TheoryTestState extends State<TheoryTest> {
                                   decoration: BoxDecoration(
                                       color: Colors.green,
                                       borderRadius: BorderRadius.circular(20.r)),
-                                child:Row(
-                                  children: [
-                                    Image.asset('assets/pic1.png',height: 0.08.sh,),
-                                  ],
+                                child:Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Row(
+                                    children: [
+                                      Image.asset('assets/pic1.png',),
+                                      Spacer(),
+                                      Text('Practice All \n Test',style: TextStyle(fontSize: 25.sp),)
+                                    ],
+                                  ),
                                 ) ,
 
                               ),

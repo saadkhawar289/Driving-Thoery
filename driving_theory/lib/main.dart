@@ -2,8 +2,8 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'Screens/home.dart';
-import 'Screens/theory_test.dart';
+import 'Screens/highway_code.dart';
+import 'Screens/road_signs.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,19 +14,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      //designSize: Size(428, 926),
+        //designSize: Size(428, 926),,
         builder: () => DevicePreview(
             enabled: true,
             builder: (context) => MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
-              // home: Splash(),
-              routes: {
-                '/': (BuildContext context) => TheoryTest(),
-
-              },
-            )));
+                  debugShowCheckedModeBanner: false,
+                  theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
+                  // home: Splash(),
+                  routes: {
+                    '/': (BuildContext context) => RoadSigns(),
+                  },
+                )));
   }
 }
-
-

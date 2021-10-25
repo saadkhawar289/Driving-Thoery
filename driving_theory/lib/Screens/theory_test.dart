@@ -62,7 +62,6 @@ class _TheoryTestState extends State<TheoryTest> {
                             Expanded(
                               flex: 4,
                               child: Container(
-                                color: Colors.yellow,
 
                               ),
                             ),
@@ -71,11 +70,21 @@ class _TheoryTestState extends State<TheoryTest> {
                               child: Container(
                                 width: 0.60.sw,
                                 decoration: BoxDecoration(
-                                    color: Colors.red,
+                                  color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        spreadRadius: 1,
+                                        offset: Offset(0.0, 1.0), //(x,y)
+                                        blurRadius: 6.0,
+                                        color: Colors.grey,
+                                      )
+                                    ],
                                     borderRadius: BorderRadius.circular(20.r)),
                                   child:Row(
                                     children: [
-
+                                      Image.asset('assets/question.png',),
+                                      SizedBox(width: 20.w,),
+                                      Text('MOCK TEST',style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                     ],
                                   ) ,
                               ),
@@ -86,16 +95,26 @@ class _TheoryTestState extends State<TheoryTest> {
                               flex: 5,
                               child: Container(
                                   width: 0.60.sw,
-                                  decoration: BoxDecoration(
-                                      color: Colors.green,
-                                      borderRadius: BorderRadius.circular(20.r)),
+                                decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        spreadRadius: 1,
+                                        offset: Offset(0.0, 1.0), //(x,y)
+                                        blurRadius: 6.0,
+                                        color: Colors.grey,
+                                      )
+                                    ],
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20.r)),
+
                                 child:Padding(
                                   padding: const EdgeInsets.all(10.0),
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Image.asset('assets/pic1.png',),
-                                      Spacer(),
-                                      Text('Practice All \n Test',style: TextStyle(fontSize: 25.sp),)
+                                      SizedBox(width: 20.w,),
+                                      Text('MOCK TEST',style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                     ],
                                   ),
                                 ) ,
@@ -106,7 +125,6 @@ class _TheoryTestState extends State<TheoryTest> {
                               flex: 2,
                               child: Container(
                                   decoration: BoxDecoration(
-                                      color: Colors.yellow,
                                      )
                               ),
                             ),
@@ -137,7 +155,8 @@ class _TheoryTestState extends State<TheoryTest> {
                                 spreadRadius: 1,
                                 offset: Offset(0.0, 1.0), //(x,y)
                                 blurRadius: 8.0,
-                                color: Colors.grey,
+                                color: Colors.grey
+                                ,
                               )
                             ],
                             color: Colors.transparent,

@@ -120,7 +120,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           )
         ],
       ),
-      height: 63.h,
+      height: 50.h,
     );
   }
 }

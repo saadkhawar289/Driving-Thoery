@@ -66,7 +66,7 @@ class _TheoryTestState extends State<TheoryTest> {
                               ),
                             ),
                             Expanded(
-                              flex: 5,
+                              flex: 4,
                               child: Container(
                                 width: 0.60.sw,
                                 decoration: BoxDecoration(
@@ -81,8 +81,10 @@ class _TheoryTestState extends State<TheoryTest> {
                                     ],
                                     borderRadius: BorderRadius.circular(20.r)),
                                   child:Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+
                                     children: [
-                                      Image.asset('assets/question.png',),
+                                      Image.asset('assets/question.png',height: 75.h,width: 75.w,),
                                       SizedBox(width: 20.w,),
                                       Text('MOCK TEST',style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                     ],
@@ -92,7 +94,7 @@ class _TheoryTestState extends State<TheoryTest> {
                             SizedBox(height: 0.03.sh,),
 
                             Expanded(
-                              flex: 5,
+                              flex: 4,
                               child: Container(
                                   width: 0.60.sw,
                                 decoration: BoxDecoration(

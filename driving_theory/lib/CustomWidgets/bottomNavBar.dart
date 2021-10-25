@@ -93,7 +93,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 });
               },
               child: Icon(
-                Icons.ac_unit,
+                Icons.trending_up,
                 size: 30,
                 color: isSelectedD ? Colors.blue[900] : Colors.white,
               ),
@@ -112,7 +112,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 });
               },
               child: Icon(
-                Icons.ac_unit,
+                Icons.pregnant_woman,
                 size: 30,
                 color: isSelectedF ? Colors.blue[900] : Colors.white,
               ),

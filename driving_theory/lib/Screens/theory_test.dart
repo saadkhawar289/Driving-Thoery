@@ -86,7 +86,7 @@ class _TheoryTestState extends State<TheoryTest> {
                                     children: [
                                       Image.asset('assets/question.png',height: 75.h,width: 75.w,),
                                       SizedBox(width: 20.w,),
-                                      Text('MOCK TEST',style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                                      Text('PRACTICE ALL\n Questions',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                     ],
                                   ) ,
                               ),
@@ -114,9 +114,9 @@ class _TheoryTestState extends State<TheoryTest> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Image.asset('assets/pic1.png',),
+                                      Image.asset('assets/pic1.png',height: 75.h,width: 75.h,),
                                       SizedBox(width: 20.w,),
-                                      Text('MOCK TEST',style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                                      Text('MOCK TEST',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                     ],
                                   ),
                                 ) ,

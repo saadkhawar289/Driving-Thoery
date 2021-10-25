@@ -38,7 +38,7 @@ class _MockTestState extends State<MockTest> {
                       height: 0.08.sh,
                       //child: Image.asset('assets/Drivinglogo.png'),
                     ),
-                  ),//////////////////////Top Center Container for logo or heading as tittle
+                  ), //////////////////////Top Center Container for logo or heading as tittle
                   Expanded(
                     flex: 2,
                     child: Container(
@@ -57,36 +57,106 @@ class _MockTestState extends State<MockTest> {
                         width: 0.90.sw,
                         //height: 0.55.sh,
                         child: Padding(
-                          padding:  EdgeInsets.only(top: 0.12.sh),
-                          child:Column(
+                          padding: EdgeInsets.only(top: 0.12.sh),
+                          child: Column(
                             children: [
-                              Expanded(
-                                flex: 4,
-                                  child: Container(
-                                color: Colors.red,
-                                    child: Row(
-                                      children: [
-                                        
-                                      ],
+                              Padding(
+                                padding: const EdgeInsets.all(28.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          borderRadius:
+                                          BorderRadius.circular(
+                                              20.r)),
+                                      width: 0.20.sw,
+                                      height: 0.20.sh,
                                     ),
-                              )),
-                              Expanded(
-                                flex: 2,
-                                  child: Container(
-                                    color: Colors.yellow,
-                                  ))
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color: Colors.yellow,
+                                          borderRadius:
+                                          BorderRadius.circular(
+                                              20.r)),
+                                      width: 0.20.sw,
+                                      height: 0.20.sh,
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          borderRadius:
+                                          BorderRadius.circular(
+                                              20.r)),
+                                      width: 0.20.sw,
+                                      height: 0.20.sh,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              // Expanded(
+                              //     flex: 3,
+                              //     child: Container(
+                              //       color: Colors.red,
+                              //       child: Padding(
+                              //         padding: EdgeInsets.only(top: 18.0.w,bottom: 18.0.w,left: 10.w,right: 10.w),
+                              //         child: Row(
+                              //           mainAxisAlignment:
+                              //               MainAxisAlignment.spaceBetween,
+                              //           children: [
+                              //             Container(
+                              //               decoration: BoxDecoration(
+                              //                   color: Colors.green,
+                              //                   borderRadius:
+                              //                       BorderRadius.circular(
+                              //                           20.r)),
+                              //               width: 0.15.sh,
+                              //             ),
+                              //             SizedBox(width: 10,),
+                              //             Container(
+                              //               decoration: BoxDecoration(
+                              //                   color: Colors.blue,
+                              //                   borderRadius:
+                              //                   BorderRadius.circular(
+                              //                       20.r)),
+                              //               width: 0.15.sh,
+                              //             ),
+                              //             SizedBox(width: 10,),
+                              //
+                              //             Container(
+                              //               decoration: BoxDecoration(
+                              //                   color: Colors.orange,
+                              //                   borderRadius:
+                              //                   BorderRadius.circular(
+                              //                       20.r)),
+                              //               width: 0.15.sh,
+                              //             ),
+                              //           ],
+                              //         ),
+                              //       ),
+                              //     )),
+                              // Expanded(
+                              //     flex: 1,
+                              //     child: Container(
+                              //       color: Colors.yellow,
+                              //     )),
+                              // Expanded(
+                              //     flex: 2,
+                              //     child: Container(
+                              //       color: Colors.black,
+                              //     ))
                             ],
                           ),
-
                         )),
-                  ),///////////////////Main white Container of screen
+                  ), ///////////////////Main white Container of screen
                   Expanded(
                     flex: 1,
                     child: Container(
                       margin: EdgeInsets.only(top: 45.h),
                       child: Container(),
                     ),
-                  ),///////////////////For hollow container to achieve the required space
+                  ), ///////////////////For hollow container to achieve the required space
                 ],
               ),
               Positioned(
@@ -119,16 +189,16 @@ class _MockTestState extends State<MockTest> {
               ),
               Positioned(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.arrow_back_ios_outlined,
-                        color: Colors.blue[800],
-                        size: 35,
-                      ),
-                    ),
-                  ))
+                padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
+                child: InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.arrow_back_ios_outlined,
+                    color: Colors.blue[800],
+                    size: 35,
+                  ),
+                ),
+              ))
             ]),
           ),
           // This trailing comma makes auto-formatting nicer for build methods.

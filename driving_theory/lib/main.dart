@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         //designSize: Size(428, 926),,
         builder: () => DevicePreview(
-            enabled: false,
+            enabled: true,
             builder: (context) => MaterialApp(
                   debugShowCheckedModeBanner: false,
                   theme: ThemeData(primaryColor: const Color(0xFF404FFA)),

@@ -14,9 +14,12 @@ class MockTest extends StatefulWidget {
 }
 
 class _MockTestState extends State<MockTest> {
+  Color color = Color(0xFFE4E6FF);
+
   DecorationImage _buildServiceBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
   }
+
   DecorationImage _buildMinutesBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
   }
@@ -67,70 +70,153 @@ class _MockTestState extends State<MockTest> {
                             children: [
                               Expanded(
                                 flex: 3,
-                                child: Container(
-
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          image: _buildMinutesBoxImage('assets/timer.png'),
-                                          borderRadius:
-                                              BorderRadius.circular(20.r)),
-                                      width: 0.25.sw,
-                                      height: 0.25.sh,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(height: 0.02.sh,),
-
-                                          Text('57',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),),
-                                          Text('MINUTES')
-                                        ],
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 8.0),
+                                  child: Container(
+                                    child: Stack(children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 28.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  //image: _buildMinutesBoxImage('assets/timer.png'),
+                                                  color: color,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20.r)),
+                                              width: 0.25.sw,
+                                              height: 0.20.sh,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  SizedBox(
+                                                    height: 0.02.sh,
+                                                  ),
+                                                  Text(
+                                                    '57',
+                                                    style: TextStyle(
+                                                        fontSize: 25.sp,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.blue[800]),
+                                                  ),
+                                                  Text('MINUTES',
+                                                      style: TextStyle(
+                                                          color:
+                                                              Colors.blue[900]))
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                                decoration: BoxDecoration(
+                                                    //  image: _buildMinutesBoxImage('assets/qusetionBox.png'),
+                                                    color: color,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20.r)),
+                                                width: 0.25.sw,
+                                                height: 0.20.sh,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 0.02.sh,
+                                                    ),
+                                                    Text('50',
+                                                        style: TextStyle(
+                                                            fontSize: 25.sp,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: Colors
+                                                                .blue[800])),
+                                                    Text('QUESTIONS',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.blue[900]))
+                                                  ],
+                                                )),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  //  image:_buildMinutesBoxImage('assets/likeBox.png'),
+                                                  color: color,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20.r)),
+                                              width: 0.25.sw,
+                                              height: 0.20.sh,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  SizedBox(
+                                                    height: 0.02.sh,
+                                                  ),
+                                                  Text(
+                                                    '43',
+                                                    style: TextStyle(
+                                                        fontSize: 25.sp,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.blue[800]),
+                                                  ),
+                                                  Text('TO PASS',
+                                                      style: TextStyle(
+                                                          color:
+                                                              Colors.blue[900]))
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          image: _buildMinutesBoxImage('assets/qusetionBox.png'),
-                                          borderRadius:
-                                              BorderRadius.circular(20.r)),
-                                      width: 0.25.sw,
-                                      height: 0.25.sh,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              SizedBox(height: 0.02.sh,),
-
-                                              Text('50',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),),
-                                              Text('QUESTIONS')
-                                            ],
-                                          )
-
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        image:_buildMinutesBoxImage('assets/likeBox.png'),
-                                          borderRadius:
-                                              BorderRadius.circular(20.r)),
-                                      width: 0.25.sw,
-                                      height: 0.25.sh,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(height: 0.02.sh,),
-
-                                          Text('43',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),),
-                                          Text('TO PASS')
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                      Positioned(
+                                          child: Padding(
+                                        padding: EdgeInsets.only(left: 0.10.sw),
+                                        child: Align(
+                                            alignment: Alignment.topLeft,
+                                            child: Image.asset(
+                                              'assets/time.png',
+                                              width: 0.10.sw,
+                                              height: 0.09.sh,
+                                            )),
+                                      )),
+                                      Positioned(
+                                          child: Padding(
+                                        padding: EdgeInsets.only(left: 0.0.sw),
+                                        child: Align(
+                                            alignment: Alignment.topCenter,
+                                            child: Image.asset(
+                                              'assets/questionMark.png',
+                                              width: 0.10.sw,
+                                              height: 0.09.sh,
+                                            )),
+                                      )),
+                                      Positioned(
+                                          child: Padding(
+                                        padding: EdgeInsets.only(right: 0.10.sw),
+                                        child: Align(
+                                            alignment: Alignment.topRight,
+                                            child: Image.asset(
+                                              'assets/recommended.png',
+                                              width: 0.10.sw,
+                                              height: 0.09.sh,
+                                            )),
+                                      ))
+                                    ]),
                                   ),
+                                ),
                               ),
                               Spacer(),
-                              MockTestTitle()
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: MockTestTitle(),
+                              )
                             ],
                           ),
                         )),
@@ -184,18 +270,24 @@ class _MockTestState extends State<MockTest> {
                   ),
                 ),
               )),
-              Positioned(child: Align(
-                alignment: Alignment.bottomCenter,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary:
-                    Color(0xFF404FFA) // This is what you need!
+              Positioned(
+                  child: Padding(
+                padding: const EdgeInsets.only(bottom: 15.0),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Color(0xFF404FFA) // This is what you need!
+                        ),
+                    child: Text(
+                      '      Start       ',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 16.sp),
                     ),
-
-
-                  child:Text('      Start       ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.sp),),onPressed: (){},
+                    onPressed: () {},
+                  ),
                 ),
               )),
-
             ]),
           ),
           // This trailing comma makes auto-formatting nicer for build methods.

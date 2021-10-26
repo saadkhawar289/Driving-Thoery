@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:driving_theory/Screens/mock_test.dart';
+import 'package:driving_theory/Screens/quiz_question.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
                   theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
                   // home: Splash(),
                   routes: {
-                    '/': (BuildContext context) => MockTest(),
+                    '/': (BuildContext context) => Quiz(),
                   },
                 )));
   }

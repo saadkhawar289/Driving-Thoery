@@ -22,7 +22,7 @@ class MockTestTitle extends StatelessWidget {
         child: Center(
           child: ListTile(
             leading: Image.asset('assets/questionsIcon.png'),
-            title: Text(MediaQuery.of(context).size.width.toString()),
+            title: Text("All Questions"),
             trailing: Text("Change",style: TextStyle(decoration: TextDecoration.underline,color:Colors.blue),),
           ),
         ),

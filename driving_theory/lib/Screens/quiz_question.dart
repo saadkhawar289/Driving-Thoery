@@ -13,6 +13,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  bool isFavourite=false;
   DecorationImage _buildServiceBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
   }
@@ -62,13 +63,18 @@ class _QuizState extends State<Quiz> {
                           child: Column(
                             children: [
                               Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
+                                  flex: 3,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 5,right:5 ),
+                                    child: Container(
                                       child: Center(
-                                        child: Text(
-                                            'What can you do to reduce environmental damage caused by your vehicle?',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                                'What can you do to reduce environmental damage caused by your vehicle?',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
+                                         //Image.asset('assets/Drivinglogo.png',height:80 ,)
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   )),
@@ -77,7 +83,7 @@ class _QuizState extends State<Quiz> {
                               //     child: Container(
                               //     )),
                               Expanded(
-                                  flex: 5,
+                                  flex: 7,
                                   child: Padding(
                                     padding:  EdgeInsets.only(bottom: 0.09.sh),
                                     child: Container(
@@ -114,7 +120,7 @@ class _QuizState extends State<Quiz> {
                     alignment: AlignmentDirectional.topCenter,
                     child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.transparent,
+                            color: Colors.white,
                             boxShadow: [
                               BoxShadow(
                                 //spreadRadius: 1,
@@ -161,16 +167,21 @@ class _QuizState extends State<Quiz> {
                           spreadRadius: 1,
                           offset: Offset(0.0, 1.0), //(x,y)
                           blurRadius: 3.0,
-                          color: Color(0xFF404FFA),
+                          color: Colors.red//Color(0xFF404FFA),
                         )
                       ],
                     ),
                     child: Center(
                       child: InkWell(
-                        onTap: (){},
+                        onTap: (){
+                          setState(() {
+                            isFavourite=isFavourite?false:true;
+
+                          });
+                        },
                         child: Icon(
-                          Icons.favorite_border_outlined,
-                          color: Colors.blue[800],
+                        isFavourite?Icons.favorite: Icons.favorite_border_outlined,
+                          color: Colors.red[800],
                           size: 22.sp,
                         ),
                       ),

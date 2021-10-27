@@ -436,7 +436,7 @@ class _MyDialogState extends State<MyDialog> {
               'Done',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
             ),
-            onPressed: () {},
+            onPressed: ()=>Navigator.of(context).pop(),
           ),
         ),
       ],

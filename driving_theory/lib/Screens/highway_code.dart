@@ -62,7 +62,9 @@ class _TheoryTestState extends State<Highway> {
                           child: ListView.builder(
                               itemCount: 10,
                               itemBuilder: (context, index) {
-                                return HighwayTile(index + 1);
+                                return InkWell(
+                                    onTap: ()=>Navigator.pushNamed(context, '/intro'),
+                                    child: HighwayTile(index + 1));
                               }),
                         )),
                   ),

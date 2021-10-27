@@ -68,63 +68,69 @@ class _TheoryTestState extends State<TheoryTest> {
                             ),
                             Expanded(
                               flex: 3,
-                              child: Container(
-                                width: 0.60.sw,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        spreadRadius: 1,
-                                        offset: Offset(0.0, 1.0), //(x,y)
-                                        blurRadius: 6.0,
-                                        color: Colors.grey,
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(20.r)),
-                                  child:Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Row(
-                                     // mainAxisAlignment: MainAxisAlignment.center,
-
-                                      children: [
-                                        Image.asset('assets/question.png',height: 75.h,width: 75.w,),
-                                        SizedBox(width: 18.w,),
-                                        Text('PRACTICE ALL\n Questions',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                              child: InkWell(
+                                onTap: ()=>Navigator.pushNamed(context, '/practice'),
+                                child: Container(
+                                  width: 0.60.sw,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          spreadRadius: 1,
+                                          offset: Offset(0.0, 1.0), //(x,y)
+                                          blurRadius: 6.0,
+                                          color: Colors.grey,
+                                        )
                                       ],
-                                    ),
-                                  ) ,
+                                      borderRadius: BorderRadius.circular(20.r)),
+                                    child:Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Row(
+                                       // mainAxisAlignment: MainAxisAlignment.center,
+
+                                        children: [
+                                          Image.asset('assets/question.png',height: 75.h,width: 75.w,),
+                                          SizedBox(width: 18.w,),
+                                          Text('PRACTICE ALL\n Questions',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                                        ],
+                                      ),
+                                    ) ,
+                                ),
                               ),
                             ),
                             SizedBox(height: 0.03.sh,),
 
                             Expanded(
                               flex: 3,
-                              child: Container(
-                                  width: 0.60.sw,
-                                decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                        spreadRadius: 1,
-                                        offset: Offset(0.0, 1.0), //(x,y)
-                                        blurRadius: 6.0,
-                                        color: Colors.grey,
-                                      )
-                                    ],
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20.r)),
+                              child: InkWell(
+                                onTap: ()=>Navigator.pushNamed(context, '/mockTest'),
+                                child: Container(
+                                    width: 0.60.sw,
+                                  decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          spreadRadius: 1,
+                                          offset: Offset(0.0, 1.0), //(x,y)
+                                          blurRadius: 6.0,
+                                          color: Colors.grey,
+                                        )
+                                      ],
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20.r)),
 
-                                child:Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Row(
-                                   // mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset('assets/stopwatch.png',height: 75.h,width: 75.h,),
-                                      SizedBox(width: 25.w,),
-                                      Text('MOCK TEST',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
-                                    ],
-                                  ),
-                                ) ,
+                                  child:Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Row(
+                                     // mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset('assets/stopwatch.png',height: 75.h,width: 75.h,),
+                                        SizedBox(width: 25.w,),
+                                        Text('MOCK TEST',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                                      ],
+                                    ),
+                                  ) ,
 
+                                ),
                               ),
                             ),
                             Expanded(

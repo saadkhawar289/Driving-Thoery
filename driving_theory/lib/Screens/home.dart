@@ -12,11 +12,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {});
-  }
+  bool isSelectedA = true;
+  bool isSelectedB = false;
+  bool isSelectedC = false;
+  bool isSelectedD = false;
+  bool isSelectedF = false;
 
   DecorationImage _buildServiceBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
@@ -28,7 +28,120 @@ class _MyHomePageState extends State<MyHomePage> {
       color: Colors.blue[200],
       child: SafeArea(
         child: Scaffold(
-          bottomNavigationBar: BottomNavBar(),
+          bottomNavigationBar:  Container(
+            decoration: BoxDecoration(
+              color: const Color(0xFF404FFA),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isSelectedA = isSelectedA ? false : true;
+                        isSelectedB = false;
+                        isSelectedC = false;
+                        isSelectedD = false;
+                        isSelectedF = false;
+                        Navigator.pushNamed(context, '/');
+
+                      });
+                    },
+                    child: Icon(
+                      Icons.menu_book,
+                      size: 30,
+                      color: isSelectedA ? Colors.blue[900] : Colors.white,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isSelectedB = isSelectedB ? false : true;
+                        isSelectedA = false;
+                        isSelectedC = false;
+                        isSelectedD = false;
+                        isSelectedF = false;
+                        Navigator.pushNamed(context, '/savedVedios');
+                      });
+                    },
+                    child: Icon(
+                      Icons.check_circle,
+                      size: 30,
+                      color: isSelectedB ? Colors.blue[900] : Colors.white,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isSelectedC = isSelectedC ? false : true;
+                        isSelectedA = false;
+                        isSelectedB = false;
+                        isSelectedD = false;
+                        isSelectedF = false;
+                        Navigator.pushNamed(context, '/allViedos');
+
+                      });
+                    },
+                    child: Icon(
+                      Icons.play_arrow,
+                      size: 35,
+                      color: isSelectedC ? Colors.blue[900] : Colors.white,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isSelectedD = isSelectedD ? false : true;
+                        isSelectedA = false;
+                        isSelectedC = false;
+                        isSelectedB = false;
+                        isSelectedF = false;
+                        Navigator.pushNamed(context, '/progress');
+
+                      });
+                    },
+                    child: Icon(
+                      Icons.trending_up,
+                      size: 30,
+                      color: isSelectedD ? Colors.blue[900] : Colors.white,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isSelectedF = isSelectedF ? false : true;
+                        isSelectedA = false;
+                        isSelectedC = false;
+                        isSelectedD = false;
+                        isSelectedB = false;
+                      });
+                    },
+                    child: Icon(
+                      Icons.workspaces_rounded,
+                      size: 30,
+                      color: isSelectedF ? Colors.blue[900] : Colors.white,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            height: 45.h,
+          ),
           body: Container(
             decoration: BoxDecoration(
                 image: _buildServiceBoxImage('assets/Wallpaper.png')),
@@ -81,48 +194,54 @@ class _MyHomePageState extends State<MyHomePage> {
                              flex: 7,
                              child: Padding(
                                padding:  EdgeInsets.only(left: 0.03.sw,top: 0.0.sh,right:0.03.sw,bottom: 0.02.sh  ),
-                               child: Container(
-                                 color: Colors.white,
-                                 child: Row(
-                                   children: [
-                                     Container(
-                                       decoration: BoxDecoration(
-                                         borderRadius: BorderRadius.circular(20.r),
-                                         color: Colors.white,
-                                         image: DecorationImage( image: AssetImage('assets/sss.png'),fit: BoxFit.fill),
-                                         // boxShadow: [
-                                         //   BoxShadow(
-                                         //     spreadRadius: 1,
-                                         //     offset: Offset(0.0, 1.0), //(x,y)
-                                         //     blurRadius: 6.0,
-                                         //     color: Colors.grey,
-                                         //   )
-                                         // ],
+                               child: InkWell(
+                                 onTap:()=> Navigator.pushNamed(context, '/theoryTest'),
+                                 child: Container(
+                                   color: Colors.white,
+                                   child: Row(
+                                     children: [
+                                       Container(
+                                         decoration: BoxDecoration(
+                                           borderRadius: BorderRadius.circular(20.r),
+                                           color: Colors.white,
+                                           image: DecorationImage( image: AssetImage('assets/sss.png'),fit: BoxFit.fill),
+                                           // boxShadow: [
+                                           //   BoxShadow(
+                                           //     spreadRadius: 1,
+                                           //     offset: Offset(0.0, 1.0), //(x,y)
+                                           //     blurRadius: 6.0,
+                                           //     color: Colors.grey,
+                                           //   )
+                                           // ],
+                                         ),
+                                         width: 0.30.sw,
+
                                        ),
-                                       width: 0.30.sw,
+                                       Spacer(),
+                                       InkWell(
+                                         onTap: ()=>Navigator.pushNamed(context, '/hazard'),
+                                         child: Container(
+                                           decoration: BoxDecoration(
+                                             image: DecorationImage( image: AssetImage('assets/hazard.png'),fit: BoxFit.fill),
+                                             borderRadius: BorderRadius.circular(20.r),
+                                             color: Colors.white,
+                                             // boxShadow: [
+                                             //   BoxShadow(
+                                             //     spreadRadius: 1,
+                                             //     offset: Offset(0.0, 1.0), //(x,y)
+                                             //     blurRadius: 6.0,
+                                             //     color: Colors.grey,
+                                             //   )
+                                             // ],
+                                           ),
 
-                                     ),
-                                     Spacer(),
-                                     Container(
-                                       decoration: BoxDecoration(
-                                         image: DecorationImage( image: AssetImage('assets/hazard.png'),fit: BoxFit.fill),
-                                         borderRadius: BorderRadius.circular(20.r),
-                                         color: Colors.white,
-                                         // boxShadow: [
-                                         //   BoxShadow(
-                                         //     spreadRadius: 1,
-                                         //     offset: Offset(0.0, 1.0), //(x,y)
-                                         //     blurRadius: 6.0,
-                                         //     color: Colors.grey,
-                                         //   )
-                                         // ],
+                                           width: 0.30.sw,
+
+                                         ),
                                        ),
 
-                                       width: 0.30.sw,
-
-                                     ),
-
-                                   ],
+                                     ],
+                                   ),
                                  ),
                                ),
                              ),
@@ -134,49 +253,55 @@ class _MyHomePageState extends State<MyHomePage> {
                               flex: 7,
                               child: Padding(
                                 padding:  EdgeInsets.only(left: 0.03.sw,top: 0.0.sh,right:0.03.sw,bottom: 0.02.sh  ),
-                                child: Container(
-                                  color: Colors.white,
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage( image: AssetImage('assets/signs.png'),fit: BoxFit.fill),
-                                          borderRadius: BorderRadius.circular(20.r),
-                                          color: Colors.white,
-                                          // boxShadow: [
-                                          //   BoxShadow(
-                                          //     spreadRadius: 1,
-                                          //     offset: Offset(0.0, 1.0), //(x,y)
-                                          //     blurRadius: 6.0,
-                                          //     color: Colors.grey,
-                                          //   )
-                                          // ],
+                                child: InkWell(
+                                  onTap: ()=>Navigator.pushNamed(context, '/roadSigns'),
+                                  child: Container(
+                                    color: Colors.white,
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage( image: AssetImage('assets/signs.png'),fit: BoxFit.fill),
+                                            borderRadius: BorderRadius.circular(20.r),
+                                            color: Colors.white,
+                                            // boxShadow: [
+                                            //   BoxShadow(
+                                            //     spreadRadius: 1,
+                                            //     offset: Offset(0.0, 1.0), //(x,y)
+                                            //     blurRadius: 6.0,
+                                            //     color: Colors.grey,
+                                            //   )
+                                            // ],
+                                          ),
+                                          width: 0.30.sw,
+
                                         ),
-                                        width: 0.30.sw,
+                                        Spacer(),
+                                        InkWell(
+                                          onTap:()=>Navigator.pushNamed(context, '/highWayCode'),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(20.r),
+                                              color: Colors.white,
+                                              image: DecorationImage( image: AssetImage('assets/highway.png'),fit: BoxFit.fill),
 
-                                      ),
-                                      Spacer(),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20.r),
-                                          color: Colors.white,
-                                          image: DecorationImage( image: AssetImage('assets/highway.png'),fit: BoxFit.fill),
+                                              // boxShadow: [
+                                              //   BoxShadow(
+                                              //     spreadRadius: 1,
+                                              //     offset: Offset(0.0, 1.0), //(x,y)
+                                              //     blurRadius: 6.0,
+                                              //     color: Colors.grey,
+                                              //   )
+                                              // ],
+                                            ),
 
-                                          // boxShadow: [
-                                          //   BoxShadow(
-                                          //     spreadRadius: 1,
-                                          //     offset: Offset(0.0, 1.0), //(x,y)
-                                          //     blurRadius: 6.0,
-                                          //     color: Colors.grey,
-                                          //   )
-                                          // ],
+                                            width: 0.30.sw,
+
+                                          ),
                                         ),
 
-                                        width: 0.30.sw,
-
-                                      ),
-
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

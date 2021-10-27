@@ -33,6 +33,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   isSelectedC = false;
                   isSelectedD = false;
                   isSelectedF = false;
+                  Navigator.pushNamed(context, '/');
+
                 });
               },
               child: Icon(
@@ -52,6 +54,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   isSelectedC = false;
                   isSelectedD = false;
                   isSelectedF = false;
+                  Navigator.pushNamed(context, '/savedVedios');
                 });
               },
               child: Icon(

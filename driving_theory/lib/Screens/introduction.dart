@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Intorduction extends StatefulWidget {
-  const Intorduction({Key? key}) : super(key: key);
+class Introduction extends StatefulWidget {
+  const Introduction({Key? key}) : super(key: key);
 
   @override
-  _QuizState createState() => _QuizState();
+  _IntroductionState createState() => _IntroductionState();
 }
 
-class _QuizState extends State<Intorduction> {
+class _IntroductionState extends State<Introduction> {
   DecorationImage _buildServiceBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
   }
@@ -70,12 +70,9 @@ class _QuizState extends State<Intorduction> {
                                             Container(
                                               height: 40,
                                               width: 40,
-                                              child: Image.asset(
-                                                "assets/speed.png",
-                                                fit: BoxFit.fill,
-                                              ),
+                                              child: Icon(Icons.remove_red_eye,color: Colors.blue,),
                                               decoration: BoxDecoration(
-                                                  color: Colors.black45,
+                                                  color: Colors.white,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           50.r)),
@@ -131,12 +128,9 @@ class _QuizState extends State<Intorduction> {
                                         Container(
                                           height: 40,
                                           width: 40,
-                                          child: Image.asset(
-                                            "assets/speed.png",
-                                            fit: BoxFit.fill,
-                                          ),
+                                          child: Icon(Icons.visibility_off,color: Colors.blue,),
                                           decoration: BoxDecoration(
-                                              color: Colors.black45,
+                                              color: Colors.white,
                                               borderRadius:
                                                   BorderRadius.circular(50.r)),
                                         ),
@@ -164,12 +158,9 @@ class _QuizState extends State<Intorduction> {
                                             Container(
                                               height: 40,
                                               width: 40,
-                                              child: Image.asset(
-                                                "assets/speed.png",
-                                                fit: BoxFit.fill,
-                                              ),
+                                              child: Icon(Icons.remove_red_eye,color: Colors.blue,),
                                               decoration: BoxDecoration(
-                                                  color: Colors.black45,
+                                                  color: Colors.white,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           50.r)),
@@ -289,39 +280,7 @@ class _QuizState extends State<Intorduction> {
                   ),
                 ),
               )),
-              Positioned(
-                  child: Padding(
-                padding: EdgeInsets.only(top: 0.14.sh, left: 0.06.sw),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 25,
-                    width: 25,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 1,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 3.0,
-                          color: Color(0xFF404FFA),
-                        )
-                      ],
-                    ),
-                    child: Center(
-                      child: InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.favorite_border_outlined,
-                          color: Colors.blue[800],
-                          size: 22.sp,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              )),
+
               Positioned(
                   child: Padding(
                 padding: EdgeInsets.only(top: 0.14.sh, left: 0.75.sw),

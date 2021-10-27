@@ -284,7 +284,7 @@ class _MockTestState extends State<MockTest> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 16.sp),
                     ),
-                    onPressed: () {},
+                    onPressed: ()=>Navigator.pushNamed(context, '/questionQuiz'),
                   ),
                 ),
               )),

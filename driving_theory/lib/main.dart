@@ -2,7 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'Screens/savevideo.dart';
+import 'Screens/progress.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
                   theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
                   // home: Splash(),
                   routes: {
-                    '/': (BuildContext context) => SaveVideo(),
+                    '/': (BuildContext context) => Progress(),
                   },
                 )));
   }

@@ -5,14 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:simple_star_rating/simple_star_rating.dart';
 
-class SaveVideo extends StatefulWidget {
-  const SaveVideo({Key? key}) : super(key: key);
+class AllVideo extends StatefulWidget {
+  const AllVideo({Key? key}) : super(key: key);
 
   @override
   _TheoryTestState createState() => _TheoryTestState();
 }
 
-class _TheoryTestState extends State<SaveVideo> {
+class _TheoryTestState extends State<AllVideo> {
   DecorationImage _buildServiceBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
   }
@@ -34,10 +34,8 @@ class _TheoryTestState extends State<SaveVideo> {
                   Center(
                     child: Container(
                       margin: EdgeInsets.only(top: 0.02.sh),
-
                       width: 0.35.sw,
                       height: 0.08.sh,
-                      //child: Image.asset('assets/Drivinglogo.png'),
                     ),
                   ),
                 ],
@@ -56,7 +54,7 @@ class _TheoryTestState extends State<SaveVideo> {
                         child: Container(
                           child: ClipRRect(
                             child: Image.asset(
-                              "assets/tra.gif",
+                              "assets/allvideo.png",
                               fit: BoxFit.cover,
                             ),
                             borderRadius: BorderRadius.circular(5),
@@ -103,7 +101,7 @@ class _TheoryTestState extends State<SaveVideo> {
                             // color: Colors.white,
                             borderRadius: BorderRadius.circular(90.r)),
                         child: Image.asset(
-                          "assets/savevideo.png",
+                          "assets/allvideoicon.png",
                           fit: BoxFit.cover,
                           height: 0.20.sh,
                         )),

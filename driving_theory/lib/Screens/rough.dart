@@ -5,14 +5,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Quiz extends StatefulWidget {
-  const Quiz({Key? key}) : super(key: key);
+class Quiz2 extends StatefulWidget {
+  const Quiz2({Key? key}) : super(key: key);
 
   @override
   _QuizState createState() => _QuizState();
 }
 
-class _QuizState extends State<Quiz> {
+class _QuizState extends State<Quiz2> {
   bool isFavourite=false;
   DecorationImage _buildServiceBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
@@ -62,42 +62,35 @@ class _QuizState extends State<Quiz> {
                           padding: EdgeInsets.only(top: 0.10.sh),
                           child: Column(
                             children: [
-                              Expanded(
-                                  flex: 3,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 5,right:5 ),
-                                    child: Container(
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                                'What can you do to reduce environmental damage caused by your vehicle?',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
-                                         //Image.asset('assets/Drivinglogo.png',height:80 ,)
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 5,right:5 ),
+                                child: Container(
+                                  color: Colors.blue,
+                                  height: 0.10.sh,
+                                  child: Image.asset('assets/Wallpaper.png',height: 0.20.sh,width: 0.90.sw,)
+                                ),
+                              ),
                               // Expanded(
                               //     flex: 1,
                               //     child: Container(
                               //     )),
-                              Expanded(
-                                  flex: 7,
-                                  child: Padding(
-                                    padding:  EdgeInsets.only(bottom: 0.09.sh),
-                                    child: Container(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.end,
-                                        children: [
-                                          QuizTitle(),
-                                          QuizTitle(),
-                                          QuizTitle(),
-                                          QuizTitle()
-                                        ],
-                                      ),
-                                    ),
-                                  ))
+                              Padding(
+                                padding:  EdgeInsets.only(bottom: 0.09.sh),
+                                child: Container(
+                                  height: 0.30.sh,
+
+                                  color: Colors.red,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      QuizTitle(),
+                                      QuizTitle(),
+                                      QuizTitle(),
+                                      QuizTitle()
+                                    ],
+                                  ),
+                                ),
+                              )
                             ],
                           ),
                         )),
@@ -141,114 +134,114 @@ class _QuizState extends State<Quiz> {
               ),
               Positioned(
                   child: Padding(
-                padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
-                child: InkWell(
-                  onTap: () {},
-                  child: Icon(
-                    Icons.arrow_back_ios_outlined,
-                    color: Colors.blue[800],
-                    size: 35,
-                  ),
-                ),
-              )),
+                    padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.arrow_back_ios_outlined,
+                        color: Colors.blue[800],
+                        size: 35,
+                      ),
+                    ),
+                  )),
               Positioned(
                   child: Padding(
-                padding: EdgeInsets.only(top: 0.14.sh, left: 0.06.sw),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 25,
-                    width: 25,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 1,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 3.0,
-                          color: Colors.red//Color(0xFF404FFA),
-                        )
-                      ],
-                    ),
-                    child: Center(
-                      child: InkWell(
-                        onTap: (){
-                          setState(() {
-                            isFavourite=isFavourite?false:true;
+                    padding: EdgeInsets.only(top: 0.14.sh, left: 0.06.sw),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 25,
+                        width: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.r),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                spreadRadius: 1,
+                                offset: Offset(0.0, 1.0), //(x,y)
+                                blurRadius: 3.0,
+                                color: Colors.red//Color(0xFF404FFA),
+                            )
+                          ],
+                        ),
+                        child: Center(
+                          child: InkWell(
+                            onTap: (){
+                              setState(() {
+                                isFavourite=isFavourite?false:true;
 
-                          });
-                        },
-                        child: Icon(
-                        isFavourite?Icons.favorite: Icons.favorite_border_outlined,
-                          color: Colors.red[800],
-                          size: 22.sp,
+                              });
+                            },
+                            child: Icon(
+                              isFavourite?Icons.favorite: Icons.favorite_border_outlined,
+                              color: Colors.red[800],
+                              size: 22.sp,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ),
-              )),
+                  )),
               Positioned(
                   child: Padding(
-                padding: EdgeInsets.only(top: 0.14.sh, left: 0.75.sw),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 25,
-                    width: 25,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 1,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 3.0,
-                          color: Color(0xFF404FFA),
-                        )
-                      ],
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.replay_5_rounded,
-                        color: Colors.blue[800],
-                        size: 22.sp,
+                    padding: EdgeInsets.only(top: 0.14.sh, left: 0.75.sw),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 25,
+                        width: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.r),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              spreadRadius: 1,
+                              offset: Offset(0.0, 1.0), //(x,y)
+                              blurRadius: 3.0,
+                              color: Color(0xFF404FFA),
+                            )
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.replay_5_rounded,
+                            color: Colors.blue[800],
+                            size: 22.sp,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              )),
+                  )),
               Positioned(
                   child: Padding(
-                padding: EdgeInsets.only(top: 0.14.sh, left: 0.85.sw),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 25,
-                    width: 25,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 1,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 3.0,
-                          color: Color(0xFF404FFA),
-                        )
-                      ],
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.record_voice_over_rounded,
-                        color: Colors.blue[800],
-                        size: 20.sp,
+                    padding: EdgeInsets.only(top: 0.14.sh, left: 0.85.sw),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 25,
+                        width: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.r),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              spreadRadius: 1,
+                              offset: Offset(0.0, 1.0), //(x,y)
+                              blurRadius: 3.0,
+                              color: Color(0xFF404FFA),
+                            )
+                          ],
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.record_voice_over_rounded,
+                            color: Colors.blue[800],
+                            size: 20.sp,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              )),
+                  )),
               Positioned(
                 // top: 0.12.sh,
                 // left: 0.14.sw,

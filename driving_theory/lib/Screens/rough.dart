@@ -1,282 +1,336 @@
-import 'package:driving_theory/CustomWidgets/bottomNavBar.dart';
-import 'package:driving_theory/CustomWidgets/hazard_box.dart';
-import 'package:driving_theory/CustomWidgets/quiz_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Quiz2 extends StatefulWidget {
-  const Quiz2({Key? key}) : super(key: key);
 
+
+class MyDialog extends StatefulWidget {
   @override
-  _QuizState createState() => _QuizState();
+  _MyDialogState createState() =>  _MyDialogState();
 }
 
-class _QuizState extends State<Quiz2> {
-  bool isFavourite=false;
-  DecorationImage _buildServiceBoxImage(String image) {
-    return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
-  }
+class _MyDialogState extends State<MyDialog> {
 
+  Color color = Color(0xFFE4E6FF);
+  bool isSelected=false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue[200],
-      child: SafeArea(
-        child: Scaffold(
-          body: Container(
-            decoration: BoxDecoration(
-                image: _buildServiceBoxImage('assets/Wallpaper.png')),
-            child: Stack(children: [
-              Column(
-                //  mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 0.02.sh),
-
-                      width: 0.35.sw,
-                      height: 0.08.sh,
-                      //child: Image.asset('assets/Drivinglogo.png'),
-                    ),
-                  ),
-                  // SizedBox(height: 10.h,),
-                  Expanded(
-                    flex: 15,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                spreadRadius: 1,
-                                offset: Offset(0.0, 1.0), //(x,y)
-                                blurRadius: 6.0,
-                                color: Colors.grey,
-                              )
-                            ],
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20.r)),
-                        margin: EdgeInsets.only(top: 0.02.sh),
-                        width: 0.95.sw,
-                        //height: 0.55.sh,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 0.10.sh),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5,right:5 ),
-                                child: Container(
-                                  color: Colors.blue,
-                                  height: 0.30.sh,
-                                  child: Center(
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          'What can you do to reduce environmental damage caused by your vehicle?',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
-                                        Image.asset('assets/Wallpaper.png',height:80 ,)
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              // Expanded(
-                              //     flex: 1,
-                              //     child: Container(
-                              //     )),
-                              Padding(
-                                padding:  EdgeInsets.only(bottom: 0.09.sh),
-                                child: Container(
-                                  color: Colors.red,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      QuizTitle(),
-                                      QuizTitle(),
-                                      QuizTitle(),
-                                      QuizTitle()
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        )),
-                  ),
-
-                ],
-              ),
-              Positioned(
-                // top: 0.12.sh,
-                // left: 0.14.sw,
+    return AlertDialog(
+      shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r)) ,
+      title: Center(child: Text('Question Settings',style: TextStyle(fontWeight: FontWeight.bold),)),
+      content: Container(
+        height: 0.40.sh,
+        width: 0.90.sw,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text('Select Question Category',style: TextStyle(
+                        fontWeight: FontWeight.bold
+                    )))
+              ],
+            ),
+            Padding(
+              padding:  EdgeInsets.only(left: 0,top:0.01.sh,right: 0.0.sw),
+              child: Container(
+                width: 0.90.sw,
+                height: 0.06.sh,
+                decoration: BoxDecoration(
+                  gradient:  LinearGradient(
+                      colors: [
+                        const Color(0xFF404FFA),
+                        const Color(0xFF9ea6ff),
+                      ],
+                      begin: const FractionalOffset(0.0, 0.0),
+                      end: const FractionalOffset(1.0, 0.0),
+                      stops: [0.0, 1.0],
+                      tileMode: TileMode.clamp),
+                ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 0.01.sh),
-                  child: Align(
-                    alignment: AlignmentDirectional.topCenter,
-                    child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                //spreadRadius: 1,
-                                offset: Offset(0.0, 0.0), //(x,y)
-                                blurRadius: 6.0,
-                                color: Colors.transparent,
-                              )
-                            ],
-                            // color: Colors.white,
-                            borderRadius: BorderRadius.circular(90.r)),
-                        child: Image.asset(
-                          'assets/hazardCircle.png',
-                          fit: BoxFit.cover,
-                          height: 0.20.sh,
-                        )),
+                  padding: const EdgeInsets.only(left: 2.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Alternatives',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                      Icon(Icons.keyboard_arrow_down_outlined,color: Colors.white)
+                    ],
                   ),
                 ),
               ),
-              Positioned(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.arrow_back_ios_outlined,
-                        color: Colors.blue[800],
-                        size: 35,
-                      ),
-                    ),
-                  )),
-              Positioned(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 0.14.sh, left: 0.06.sw),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 25,
-                        width: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.r),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                spreadRadius: 1,
-                                offset: Offset(0.0, 1.0), //(x,y)
-                                blurRadius: 3.0,
-                                color: Colors.red//Color(0xFF404FFA),
-                            )
-                          ],
-                        ),
-                        child: Center(
-                          child: InkWell(
-                            onTap: (){
-                              setState(() {
-                                isFavourite=isFavourite?false:true;
+            ),
+            SizedBox(height: 0.04.sh,),
+            Row(
+              children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text('Select Number of Questions',style: TextStyle(
+                        fontWeight: FontWeight.bold
+                    )))
+              ],
+            ),
+            Padding(
+              padding:  EdgeInsets.only(left: 0,top:0.01.sh,),
+              child: Container(
+                width: 0.80.sw,
+                height: 0.06.sh,
 
-                              });
-                            },
-                            child: Icon(
-                              isFavourite?Icons.favorite: Icons.favorite_border_outlined,
-                              color: Colors.red[800],
-                              size: 22.sp,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  )),
-              Positioned(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 0.14.sh, left: 0.75.sw),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 25,
-                        width: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.r),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              spreadRadius: 1,
-                              offset: Offset(0.0, 1.0), //(x,y)
-                              blurRadius: 3.0,
-                              color: Color(0xFF404FFA),
-                            )
-                          ],
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.replay_5_rounded,
-                            color: Colors.blue[800],
-                            size: 22.sp,
-                          ),
-                        ),
-                      ),
-                    ),
-                  )),
-              Positioned(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 0.14.sh, left: 0.85.sw),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 25,
-                        width: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.r),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              spreadRadius: 1,
-                              offset: Offset(0.0, 1.0), //(x,y)
-                              blurRadius: 3.0,
-                              color: Color(0xFF404FFA),
-                            )
-                          ],
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.record_voice_over_rounded,
-                            color: Colors.blue[800],
-                            size: 20.sp,
-                          ),
-                        ),
-                      ),
-                    ),
-                  )),
-              Positioned(
-                // top: 0.12.sh,
-                // left: 0.14.sw,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 28.0),
-                  child: Align(
-                    alignment: AlignmentDirectional.bottomCenter,
-                    child: Container(
-                      width: 0.65.sw,
-                      height: 0.05.sh,
-                      decoration: BoxDecoration(
-                          color: Color(0xFF404FFA),
-                          borderRadius: BorderRadius.circular(20.r)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(
-                            Icons.arrow_back_ios_outlined,
-                            color: Colors.white,
-                          ),
-                          Icon(Icons.flag, color: Colors.white),
-                          Icon(Icons.sms_failed, color: Colors.white),
-                          Icon(Icons.arrow_forward_ios_outlined,
-                              color: Colors.white),
-                        ],
+                  padding:  EdgeInsets.only(left: 0.0.sw,right:0.0.sh),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: color,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        height: 0.10.sh,
+                        width: 0.10.sw,
+
+                        child: Center(
+                          child: Text('5'),
+                        ),
                       ),
-                    ),
+                      Container(
+                        height: 0.10.sh,
+                        width: 0.10.sw,
+                        decoration: BoxDecoration(
+                          color: color,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Center(
+                          child: Text('10'),
+                        ),
+                      ), Container(
+                        height: 0.10.sh,
+                        width: 0.10.sw,
+                        decoration: BoxDecoration(
+                          color: color,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Center(
+                          child: Text('15'),
+                        ),
+                      ), Container(
+                        height: 0.10.sh,
+                        width: 0.10.sw,
+                        decoration: BoxDecoration(
+                          gradient:  LinearGradient(
+                              colors: [
+                                const Color(0xFF404FFA),
+                                const Color(0xFF9ea6ff),
+                              ],
+                              begin: const FractionalOffset(0.0, 0.0),
+                              end: const FractionalOffset(1.0, 0.0),
+                              stops: [0.0, 1.0],
+                              tileMode: TileMode.clamp),
+                          color: color,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Center(
+                          child: Text('20'),
+                        ),
+                      ), Container(
+                        height: 0.10.sh,
+                        width: 0.10.sw,
+                        decoration: BoxDecoration(
+                          color: color,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Center(
+                          child: Text('25'),
+                        ),
+                      ), Container(
+                        height: 0.10.sh,
+                        width: 0.10.sw,
+                        decoration: BoxDecoration(
+                          color: color,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Center(
+                          child: Text('30'),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ]),
-          ),
-          // This trailing comma makes auto-formatting nicer for build methods.
+            ),
+            SizedBox(height: 0.04.sh,),
+            Row(
+              children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text('Select Quiz time in minutes',style: TextStyle(
+                        fontWeight: FontWeight.bold
+                    ),))
+              ],
+            ),
+            Padding(
+              padding:  EdgeInsets.only(left: 0,top:0.01.sh,),
+              child: Container(
+                width: 0.80.sw,
+                height: 0.06.sh,
+
+                child: Padding(
+                  padding:  EdgeInsets.only(left: 0.0.sw,right:0.0.sh),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      InkWell(
+                      onTap: (){
+                setState(() {
+
+                isSelected=isSelected?false:true;
+
+                });
+                },
+                  child: Container(
+                    height: 0.10.sh,
+                    width: 0.10.sw,
+                    decoration: BoxDecoration(
+                      color:isSelected==true?Colors.red:color,
+
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                    child: Center(
+                      child: Text('20'),
+                    ),
+                  ),
+                ),
+                      InkWell(
+                        onTap: (){
+                          setState(() {
+
+                            isSelected=isSelected?false:true;
+
+                          });
+                        },
+                        child: Container(
+                          height: 0.10.sh,
+                          width: 0.10.sw,
+                          decoration: BoxDecoration(
+                            color:isSelected==true?Colors.red:color,
+
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: Center(
+                            child: Text('20'),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){
+                          setState(() {
+
+                            isSelected=isSelected?false:true;
+
+                          });
+                        },
+                        child: Container(
+                          height: 0.10.sh,
+                          width: 0.10.sw,
+                          decoration: BoxDecoration(
+                            color:isSelected==true?Colors.red:color,
+
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: Center(
+                            child: Text('20'),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){
+                          setState(() {
+
+                            isSelected=isSelected?false:true;
+
+                          });
+                        },
+                        child: Container(
+                          height: 0.10.sh,
+                          width: 0.10.sw,
+                          decoration: BoxDecoration(
+                            color:isSelected==true?Colors.red:color,
+
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: Center(
+                            child: Text('20'),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){
+                          setState(() {
+
+                            isSelected=isSelected?false:true;
+
+                          });
+                        },
+                        child: Container(
+                          height: 0.10.sh,
+                          width: 0.10.sw,
+                          decoration: BoxDecoration(
+                            color:isSelected==true?Colors.red:color,
+
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: Center(
+                            child: Text('20'),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){
+                          setState(() {
+
+                            isSelected=isSelected?false:true;
+
+                          });
+                        },
+                        child: Container(
+                          height: 0.10.sh,
+                          width: 0.10.sw,
+                          decoration: BoxDecoration(
+                            color:isSelected==true?Colors.red:color,
+
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: Center(
+                            child: Text('20'),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+
+
+          ],
         ),
       ),
+      actions: [
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: Color(0xFF404FFA) // This is what you need!
+            ),
+            child: Text(
+              '      Done       ',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 16.sp),
+            ),
+            onPressed: () {},
+          ),
+        ),
+      ],
     );
   }
 }

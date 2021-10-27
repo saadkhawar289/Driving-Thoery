@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
                   theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
                   // home: Splash(),
                   routes: {
-                    '/': (BuildContext context) => Quiz(),
+                    '/': (BuildContext context) => MockTest(),
                   },
                 )));
   }

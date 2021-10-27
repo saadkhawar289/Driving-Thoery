@@ -66,8 +66,16 @@ class _QuizState extends State<Quiz2> {
                                 padding: const EdgeInsets.only(left: 5,right:5 ),
                                 child: Container(
                                   color: Colors.blue,
-                                  height: 0.10.sh,
-                                  child: Image.asset('assets/Wallpaper.png',height: 0.20.sh,width: 0.90.sw,)
+                                  height: 0.30.sh,
+                                  child: Center(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          'What can you do to reduce environmental damage caused by your vehicle?',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
+                                        Image.asset('assets/Wallpaper.png',height:80 ,)
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                               // Expanded(
@@ -77,8 +85,6 @@ class _QuizState extends State<Quiz2> {
                               Padding(
                                 padding:  EdgeInsets.only(bottom: 0.09.sh),
                                 child: Container(
-                                  height: 0.30.sh,
-
                                   color: Colors.red,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -95,13 +101,7 @@ class _QuizState extends State<Quiz2> {
                           ),
                         )),
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      margin: EdgeInsets.only(top: 45.h),
-                      child: Container(),
-                    ),
-                  ),
+
                 ],
               ),
               Positioned(

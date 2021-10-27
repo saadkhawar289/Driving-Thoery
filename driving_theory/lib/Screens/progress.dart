@@ -57,20 +57,17 @@ class _TheoryTestState extends State<Progress> {
                         width: 0.80.sw,
                         //height: 0.55.sh,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 90.0),
+                          padding: const EdgeInsets.only(top: 100.0),
                           child: Column(
                             children: [
-                              Expanded(
-                                flex: 4,
-                                child: Container(
-                                  child: Image.asset("assets/graph.png"),
-                                ),
+                              Container(
+                                child: Image.asset("assets/graph.png"),
                               ),
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  width: 1.sw,
-                                  //color: Colors.red,
+                              Container(
+                                width: 1.sw,
+                                //color: Colors.red,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 20.0),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
@@ -83,18 +80,28 @@ class _TheoryTestState extends State<Progress> {
                                           borderRadius:
                                               BorderRadius.circular(5),
                                         ),
-                                        child: Center(child: Text("Mock task")),
+                                        child: Center(
+                                            child: Text(
+                                          "Mock task",
+                                          style: TextStyle(color: Colors.white),
+                                        )),
                                       ),
                                       Container(
                                         height: 30,
                                         width: 80,
                                         decoration: BoxDecoration(
-                                          color: Colors.red,
+                                          // color: Colors.red,
+                                          border: Border.all(
+                                              color: Colors.blueAccent),
                                           borderRadius:
                                               BorderRadius.circular(5),
                                         ),
-                                        child:
-                                            Center(child: Text("theory test")),
+                                        child: Center(
+                                            child: Text(
+                                          "theory test",
+                                          style: TextStyle(
+                                              color: Colors.lightBlue),
+                                        )),
                                       )
                                     ],
                                   ),

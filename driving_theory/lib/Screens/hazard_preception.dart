@@ -58,16 +58,16 @@ class _HazardPreceptionState extends State<HazardPreception> {
                         width: 0.80.sw,
                         //height: 0.55.sh,
                         child: Padding(
-                          padding:  EdgeInsets.only(top: 0.12.sh),
-                          child:ListView.builder(
-                            itemBuilder: (BuildContext context, int index) => Container(
+                          padding: EdgeInsets.only(top: 0.12.sh),
+                          child: ListView.builder(
+                            itemBuilder: (BuildContext context, int index) =>
+                                Container(
                               child: HazardBox(),
                             ),
                             addAutomaticKeepAlives: false,
                             itemCount: 7,
                             //cacheExtent: 100.0,
                           ),
-
                         )),
                   ),
                   Expanded(
@@ -111,7 +111,9 @@ class _HazardPreceptionState extends State<HazardPreception> {
                   child: Padding(
                 padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                   child: Icon(
                     Icons.arrow_back_ios_outlined,
                     color: Colors.blue[800],

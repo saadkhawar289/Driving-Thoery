@@ -1,4 +1,3 @@
-import 'package:driving_theory/CustomWidgets/bottomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,12 +13,12 @@ class _TheoryTestState extends State<Progress> {
   DecorationImage _buildServiceBoxImage(String image) {
     return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
   }
+
   bool isSelectedA = false;
   bool isSelectedB = false;
   bool isSelectedC = false;
   bool isSelectedD = true;
   bool isSelectedF = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,6 @@ class _TheoryTestState extends State<Progress> {
                         isSelectedD = false;
                         isSelectedF = false;
                         Navigator.pushNamed(context, '/');
-
                       });
                     },
                     child: Icon(
@@ -87,7 +85,6 @@ class _TheoryTestState extends State<Progress> {
                         isSelectedD = false;
                         isSelectedF = false;
                         Navigator.pushNamed(context, '/allViedos');
-
                       });
                     },
                     child: Icon(
@@ -108,7 +105,6 @@ class _TheoryTestState extends State<Progress> {
                         isSelectedB = false;
                         isSelectedF = false;
                         Navigator.pushNamed(context, '/progress');
-
                       });
                     },
                     child: Icon(
@@ -267,6 +263,20 @@ class _TheoryTestState extends State<Progress> {
                   ),
                 ),
               ),
+              Positioned(
+                  child: Padding(
+                padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_outlined,
+                    color: Colors.blue[800],
+                    size: 35,
+                  ),
+                ),
+              ))
             ]),
           ),
           // This trailing comma makes auto-formatting nicer for build methods.

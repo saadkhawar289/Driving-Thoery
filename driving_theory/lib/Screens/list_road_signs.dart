@@ -295,6 +295,20 @@ class _TheoryTestState extends State<ListRoadSigns> {
                   ),
                 ),
               ),
+              Positioned(
+                  child: Padding(
+                padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_outlined,
+                    color: Colors.blue[800],
+                    size: 35,
+                  ),
+                ),
+              ))
             ]),
           ),
           // This trailing comma makes auto-formatting nicer for build methods.

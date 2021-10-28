@@ -1,6 +1,4 @@
 import 'package:driving_theory/CustomWidgets/bottomNavBar.dart';
-import 'package:driving_theory/CustomWidgets/hazard_box.dart';
-import 'package:driving_theory/CustomWidgets/highwayTile.dart';
 import 'package:driving_theory/CustomWidgets/mock_test_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +73,8 @@ class _MockTestState extends State<MockTest> {
                                   child: Container(
                                     child: Stack(children: [
                                       Padding(
-                                        padding: const EdgeInsets.only(top: 28.0),
+                                        padding:
+                                            const EdgeInsets.only(top: 28.0),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceAround,
@@ -91,7 +90,8 @@ class _MockTestState extends State<MockTest> {
                                               height: 0.20.sh,
                                               child: Column(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
                                                   SizedBox(
                                                     height: 0.02.sh,
@@ -102,7 +102,8 @@ class _MockTestState extends State<MockTest> {
                                                         fontSize: 25.sp,
                                                         fontWeight:
                                                             FontWeight.bold,
-                                                        color: Colors.blue[800]),
+                                                        color:
+                                                            Colors.blue[800]),
                                                   ),
                                                   Text('MINUTES',
                                                       style: TextStyle(
@@ -137,8 +138,8 @@ class _MockTestState extends State<MockTest> {
                                                                 .blue[800])),
                                                     Text('QUESTIONS',
                                                         style: TextStyle(
-                                                            color:
-                                                                Colors.blue[900]))
+                                                            color: Colors
+                                                                .blue[900]))
                                                   ],
                                                 )),
                                             Container(
@@ -152,7 +153,8 @@ class _MockTestState extends State<MockTest> {
                                               height: 0.20.sh,
                                               child: Column(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
                                                   SizedBox(
                                                     height: 0.02.sh,
@@ -163,7 +165,8 @@ class _MockTestState extends State<MockTest> {
                                                         fontSize: 25.sp,
                                                         fontWeight:
                                                             FontWeight.bold,
-                                                        color: Colors.blue[800]),
+                                                        color:
+                                                            Colors.blue[800]),
                                                   ),
                                                   Text('TO PASS',
                                                       style: TextStyle(
@@ -199,7 +202,8 @@ class _MockTestState extends State<MockTest> {
                                       )),
                                       Positioned(
                                           child: Padding(
-                                        padding: EdgeInsets.only(right: 0.10.sw),
+                                        padding:
+                                            EdgeInsets.only(right: 0.10.sw),
                                         child: Align(
                                             alignment: Alignment.topRight,
                                             child: Image.asset(
@@ -262,7 +266,9 @@ class _MockTestState extends State<MockTest> {
                   child: Padding(
                 padding: EdgeInsets.only(top: 0.02.sh, left: 0.02.sw),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                   child: Icon(
                     Icons.arrow_back_ios_outlined,
                     color: Colors.blue[800],
@@ -284,7 +290,8 @@ class _MockTestState extends State<MockTest> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 16.sp),
                     ),
-                    onPressed: ()=>Navigator.pushNamed(context, '/questionQuiz'),
+                    onPressed: () =>
+                        Navigator.pushNamed(context, '/questionQuiz'),
                   ),
                 ),
               )),

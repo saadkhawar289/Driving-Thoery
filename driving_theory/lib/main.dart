@@ -27,25 +27,27 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         //designSize: Size(428, 926),,
         builder: () => DevicePreview(
-            enabled: true,
+            enabled: false,
             builder: (context) => MaterialApp(
                   debugShowCheckedModeBanner: false,
                   theme: ThemeData(primaryColor: const Color(0xFF404FFA)),
                   // home: Splash(),
                   routes: {
-                    '/': (BuildContext context) => MyHomePage(title: '',),
-                    '/theoryTest':(BuildContext context) => TheoryTest(),
-                    '/practice':(BuildContext context) =>Practice(),
-                    '/mockTest':(BuildContext context) =>MockTest(),
-                    '/questionQuiz':(BuildContext context) =>Quiz(),
-                    '/hazard':(BuildContext context) =>HazardPreception(),
-                    '/roadSigns':(BuildContext context) =>RoadSigns(),
-                    '/roadSignlist':(BuildContext context) =>ListRoadSigns(),
-                    '/highWayCode':(BuildContext context) =>Highway(),
-                    '/intro':(BuildContext context) =>Introduction(),
-                    '/savedVedios':(BuildContext context) =>SaveVideo(),
-                    '/allViedos':(BuildContext context) =>AllVideo(),
-                    '/progress':(BuildContext context) =>Progress()
+                    '/': (BuildContext context) => MyHomePage(
+                          title: '',
+                        ),
+                    '/theoryTest': (BuildContext context) => TheoryTest(),
+                    '/practice': (BuildContext context) => Practice(),
+                    '/mockTest': (BuildContext context) => MockTest(),
+                    '/questionQuiz': (BuildContext context) => Quiz(),
+                    '/hazard': (BuildContext context) => HazardPreception(),
+                    '/roadSigns': (BuildContext context) => RoadSigns(),
+                    '/roadSignlist': (BuildContext context) => ListRoadSigns(),
+                    '/highWayCode': (BuildContext context) => Highway(),
+                    '/intro': (BuildContext context) => Introduction(),
+                    '/savedVedios': (BuildContext context) => SaveVideo(),
+                    '/allViedos': (BuildContext context) => AllVideo(),
+                    '/progress': (BuildContext context) => Progress()
                   },
                 )));
   }

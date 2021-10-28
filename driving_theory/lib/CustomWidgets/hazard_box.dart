@@ -42,7 +42,7 @@ class HazardBox extends StatelessWidget {
                   Text(
                     'MOCK TEST',
                     style: TextStyle(
-                        fontSize: 18.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF414253)),
                   ),
@@ -71,10 +71,10 @@ class HazardBox extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                     height: 0.04.sh,
-                  width: 0.35.sw,
+                  width: 0.32.sw,
                   decoration: BoxDecoration( color:lightBlue.withOpacity(0.58), borderRadius: BorderRadius.circular(15.r)),
 
-                  child: Center(child: Text('Share to Unlock',style: TextStyle(fontSize: 16.sp,color: Colors.white,fontWeight: FontWeight.bold),))),
+                  child: Center(child: Text('Share to Unlock',style: TextStyle(fontSize: 13.sp,color: Colors.white,fontWeight: FontWeight.bold),))),
             ),
           ))
         ]);

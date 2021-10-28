@@ -33,6 +33,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   isSelectedC = false;
                   isSelectedD = false;
                   isSelectedF = false;
+                  Navigator.pushNamed(context, '/');
+
                 });
               },
               child: Icon(
@@ -52,6 +54,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   isSelectedC = false;
                   isSelectedD = false;
                   isSelectedF = false;
+                  Navigator.pushNamed(context, '/savedVedios');
                 });
               },
               child: Icon(
@@ -93,7 +96,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 });
               },
               child: Icon(
-                Icons.ac_unit,
+                Icons.trending_up,
                 size: 30,
                 color: isSelectedD ? Colors.blue[900] : Colors.white,
               ),
@@ -112,7 +115,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 });
               },
               child: Icon(
-                Icons.ac_unit,
+                Icons.pregnant_woman,
                 size: 30,
                 color: isSelectedF ? Colors.blue[900] : Colors.white,
               ),
@@ -120,7 +123,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           )
         ],
       ),
-      height: 63.h,
+      height: 45.h,
     );
   }
 }

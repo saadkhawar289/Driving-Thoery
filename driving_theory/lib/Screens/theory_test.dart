@@ -90,8 +90,8 @@ class _TheoryTestState extends State<TheoryTest> {
 
                                         children: [
                                           Image.asset('assets/question.png',height: 75.h,width: 75.w,),
-                                          SizedBox(width: 18.w,),
-                                          Text('PRACTICE ALL\n Questions',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                                          SizedBox(width: 0.02.sw,),
+                                          Text('PRACTICE ALL\n Questions',style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                         ],
                                       ),
                                     ) ,
@@ -119,13 +119,13 @@ class _TheoryTestState extends State<TheoryTest> {
                                       borderRadius: BorderRadius.circular(20.r)),
 
                                   child:Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding:  EdgeInsets.all(10.0.sp),
                                     child: Row(
                                      // mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Image.asset('assets/stopwatch.png',height: 75.h,width: 75.h,),
-                                        SizedBox(width: 25.w,),
-                                        Text('MOCK TEST',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
+                                        SizedBox(width: 0.03.sw,),
+                                        Text('MOCK TEST',style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.bold,color: Color(0xFF414253)),)
                                       ],
                                     ),
                                   ) ,
